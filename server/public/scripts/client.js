@@ -2,32 +2,43 @@ var app = angular.module('myApp', ['ngRoute']);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider
-    .when('/home', {
-      templateUrl: '/views/templates/home.html',
-      controller: 'HomeController',
-      controllerAs: 'home'
+    .when('/bear', {
+      templateUrl: '/views/templates/bear.html',
+      controller: 'BearController',
+      controllerAs: 'bear'
     })
-    .when('/potato' ,{
-      templateUrl: '/views/templates/potato.html',
-      controller: 'PotatoController',
-      controllerAs: 'potato'
+    .when('/bat', {
+      templateUrl: '/views/templates/bat.html',
+      controller: 'BatController',
+      controllerAs: 'bat'
+    })
+    .when('/thing', {
+      templateUrl: '/views/templates/thing.html',
+      controller: 'ThingController',
+      controllerAs: 'thing'
     })
     .otherwise({
-      redirectTo: 'home'
+      redirectTo: 'bear'
     });
 
 }]);
 
-app.controller('HomeController', function() {
-  console.log('home controller running');
+app.controller('BearController', function() {
+  console.log('Bear controller running');
   var self = this;
-  self.message = "Home controller is the best!";
+  self.message = "Bear controller is the best!";
 
 });
 
-app.controller('PotatoController', function() {
-  console.log('potato controller running');
+app.controller('BatController', function() {
+  console.log('Bat controller running');
   var self = this;
-  self.message = "Potato controller is the best!";
+  self.message = "Bat controller is the best!";
 
+});
+
+app.controller('ThingController', function() {
+  console.log('Thing controller is running');
+  var self = this;
+  self.message = "Thing controller is the best!"
 });
